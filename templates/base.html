@@ -1,1 +1,28 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Superstore Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Superstore</h2>
+        <ul>
+            <li><a href="/">Dashboard</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Customers</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="topbar">
+            <h1>Dashboard</h1>
+        </div>
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</body>
+</html>
