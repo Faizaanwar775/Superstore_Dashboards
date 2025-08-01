@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="cards">
+    <div class="card">Total Sales<br><strong>${{ sales }}</strong></div>
+    <div class="card">Total Profit<br><strong>${{ profit }}</strong></div>
+    <div class="card">Total Orders<br><strong>{{ orders }}</strong></div>
+    <div class="card">Unique States<br><strong>{{ states }}</strong></div>
+</div>
+<div class="charts">
+    <canvas id="salesChart"></canvas>
+</div>
+<script>
+    const ctx = document.getElementById('salesChart').getContext('2d');
+    const salesChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Office Supplies', 'Furniture', 'Technology'],
+            datasets: [{
+                label: 'Sales by Category',
+                data: [12000, 15000, 18000],
+                backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc']
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+</script>
+{% endblock %}
+
+
